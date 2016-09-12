@@ -1,0 +1,30 @@
+git config --global user.name
+git config --global user.email
+
+git init 将当前目录加入Git版本控制
+git add 将指定文件加入暂存区（Stage）
+git commit 将暂存区内的文件存入仓库
+git status 查看文件状态
+git diff 查看文件的变更
+git log 查看文件变更日志
+git reflog 查看文件版本号
+git reset --hard HEAD^ or HEAD~ or <版本号> 版本回退
+git checkout -- <文件> 将仓库文件覆盖工作区文件
+git remote add origin 添加远程仓库
+git push -u origin <分支> 将Stage推送至远程仓库（仅第一次推送需要参数-u其作用是将本地仓库与远程仓库进行关联）
+git clone 克隆远程仓库至本地
+git checkout 命令加上 –b参数表示创建并切换，相当于如下2条命令
+git branch dev
+git checkout dev
+git branch 查看分支
+git merge 合并指定分支到当前分支
+git branch -d 删除分区
+cat　查看文件内容
+
+#rebase & reset
+#reset 回滚至指定版本 [git reset --hard 版本号 或 HEAD^ 或 HEAD~] --hard 完全回退，包括现有修改；--mixed 回退，现有修改保存；--soft 版本号回退。
+#rebase [git rebase -i 提交SHA] 然后根据提示将 需要合并的commit squash 至 pick 中.
+
+
+ssh-keygen  -t rsa –C “youremail@example.com” 创建SSH传输密钥
+
