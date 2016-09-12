@@ -1,0 +1,41 @@
+========================================================================
+C3P0
+========================================================================
+<!-- C3P0 -->
+<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+	<property name="user" value="${DB.username}"></property>
+	<property name="password" value="${DB.password}"></property>
+	<property name="driverClass" value="${jdbc.driverClass}"></property>
+	<property name="jdbcUrl" value="${DB.url}"></property>
+	<property name="minPoolSize" value="${jdbc.minPoolSize}"></property>
+	<property name="maxPoolSize" value="${jdbc.maxPoolSize}"></property>
+	<property name="initialPoolSize" value="${jdbc.initialPoolSize}"></property>
+	<property name="acquireIncrement" value="${jdbc.acquireIncrement}"></property>
+</bean>
+
+========================================================================
+Druid
+========================================================================
+<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close"> 
+	<property name="driverClassName" value="${jdbc.driverClass}"></property>
+	<property name="url" value="${DB.url}" />
+	<property name="username" value="${DB.username}" />
+	<property name="password" value="${DB.password}" />
+	    
+	<property name="filters" value="stat" />
+	    
+	<property name="maxActive" value="20" />
+	<property name="initialSize" value="1" />
+	<property name="maxWait" value="60000" />
+	<property name="minIdle" value="1" />
+	    
+	<property name="timeBetweenEvictionRunsMillis" value="60000" />
+	<property name="minEvictableIdleTimeMillis" value="300000" />
+	    
+	<property name="testWhileIdle" value="false" />
+	<property name="testOnBorrow" value="false" />
+	<property name="testOnReturn" value="false" />
+	    
+	<property name="poolPreparedStatements" value="true" />
+	<property name="maxOpenPreparedStatements" value="20" />
+</bean>
