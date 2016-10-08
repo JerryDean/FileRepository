@@ -1,0 +1,2 @@
+Windows 7 sometimes breaks FTP connections on Java 7 if firewall is enabled. 
+		Command netsh advfirewall set global StatefulFTP disable usually fixes the problem. 
