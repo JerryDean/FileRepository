@@ -1,4 +1,4 @@
-git config --global user.name
+﻿git config --global user.name
 git config --global user.email
 
 git init 将当前目录加入Git版本控制
@@ -28,3 +28,8 @@ cat　查看文件内容
 
 ssh-keygen  -t rsa –C “youremail@example.com” 创建SSH传输密钥
 
+
+
+
+
+Test message....
