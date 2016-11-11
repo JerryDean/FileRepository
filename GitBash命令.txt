@@ -28,8 +28,3 @@ cat　查看文件内容
 
 ssh-keygen  -t rsa –C “youremail@example.com” 创建SSH传输密钥
 
-
-
-
-
-Test message....
