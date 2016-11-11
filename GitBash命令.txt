@@ -1,5 +1,6 @@
 ﻿git config --global user.name
 git config --global user.email
+git config --global push.default matching/simple
 
 git init 将当前目录加入Git版本控制
 git add 将指定文件加入暂存区（Stage）
@@ -27,4 +28,6 @@ cat　查看文件内容
 
 
 ssh-keygen  -t rsa –C “youremail@example.com” 创建SSH传输密钥
-
+ssh-agent -s 开启agent
+ssh-agent -add <ssh-url>  通过agent 管理保存ssh.
+ssh -T 用户名@Host 测试ssh 是否配置成功
