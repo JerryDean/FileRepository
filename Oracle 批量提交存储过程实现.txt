@@ -1,0 +1,16 @@
+DECLARE
+  CURSOR cur IS
+       SELECT * FROM ARDS_BP_BD_CASEACCIDENT_TS@CDJGLINK;
+  TYPE rec IS TABLE OF ARDS_BP_BD_CASEACCIDENT_TS@CDJGLINK%ROWTYPE;
+  recs rec;
+BEGIN
+  OPEN cur;
+  WHILE (TRUE) LOOP
+        FETCH cur BULK COLLECT INTO recs LIMIT 100000;
+        FORALL i IN 1 .. recs.COUNT
+        INSERT INTO tr_pii_case_accident VALUES recs (i);
+        COMMIT;
+        EXIT WHEN cur%NOTFOUND;
+  END LOOP;
+  CLOSE cur;
+END;
